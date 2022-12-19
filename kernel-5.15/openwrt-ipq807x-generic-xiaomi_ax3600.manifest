@@ -3,11 +3,11 @@ ath10k-board-qca9887 - 20221109-5
 ath10k-firmware-qca9887-ct - 2020-11-08-1
 ath11k-firmware-ipq8074 - 2022-12-14-ab1229f9-1
 attendedsysupgrade-common - 8
-base-files - 1507-r21531-8a3812b44b
+base-files - 1509-r21571-bce37ee225
 busybox - 1.35.0-5
 ca-bundle - 20211016-1
 cgi-io - 2022-08-10-901b0f04-21
-dawn - 2022-07-24-9e8060ea-1
+dawn - 2022-11-02-da8d870d-1
 dnsmasq-full - 2.87-6
 dropbear - 2022.82-2
 ethtool - 6.0-1
@@ -35,7 +35,7 @@ jshn - 2022-09-27-ea560134-1
 jsonfilter - 2018-02-04-c7e938d6-1
 kernel - 5.15.83-1-7d6b095fdfabc71aaec387aba5c3c7c4
 kmod-ath - 5.15.83+6.1-rc8-3
-kmod-ath10k-ct-smallbuffers - 5.15.83+2022-05-13-f808496f-2
+kmod-ath10k-ct-smallbuffers - 5.15.83+2022-05-13-f808496f-3
 kmod-ath11k - 5.15.83+6.1-rc8-3
 kmod-ath11k-ahb - 5.15.83+6.1-rc8-3
 kmod-br-netfilter - 5.15.83-1
@@ -173,7 +173,7 @@ luci-app-dawn - git-22.270.27015-88bb5f3
 luci-app-firewall - git-22.089.67453-0eb3aeb
 luci-app-opkg - git-22.273.28779-84ba6a5
 luci-app-ttyd - git-21.281.64389-70f3ae5
-luci-base - git-22.347.45170-440a2e7
+luci-base - git-22.351.50506-a27d2db
 luci-compat - git-22.297.83017-673f382
 luci-i18n-attendedsysupgrade-zh-cn - git-22.338.67343-971cd82
 luci-i18n-base-zh-cn - git-22.348.03306-22231f7
@@ -189,7 +189,7 @@ luci-lib-nixio - git-22.222.71555-88b9088
 luci-lua-runtime - git-22.325.41248-fa17c15
 luci-mod-admin-full - git-19.253.48496-3f93650
 luci-mod-network - git-22.344.46004-858252c
-luci-mod-status - git-22.347.82151-bad783a
+luci-mod-status - git-22.351.50506-a27d2db
 luci-mod-system - git-22.297.83017-f478fe6
 luci-proto-ipip - git-22.019.83340-37253b5
 luci-proto-ipv6 - git-21.148.48881-79947af
@@ -223,7 +223,7 @@ rpcd-mod-ucode - 2022-12-15-7de4820c-1
 terminfo - 6.3-2
 ttyd - 1.6.3-3
 ubi-utils - 2.1.5-1
-uboot-envtools - 2022.10-18
+uboot-envtools - 2022.10-20
 ubox - 2022-08-13-4c7b720b-1
 ubus - 2022-06-01-2bebf93c-1
 ubusd - 2022-06-01-2bebf93c-1
