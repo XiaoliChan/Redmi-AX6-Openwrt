@@ -3,12 +3,12 @@ ath10k-board-qca9887 - 20221109-5
 ath10k-firmware-qca9887-ct - 2020-11-08-1
 ath11k-firmware-ipq8074 - 2022-12-14-ab1229f9-1
 attendedsysupgrade-common - 8
-base-files - 1509-r21610-2d75dcd5b6
+base-files - 1510-r21623-2f7a3cc691
 busybox - 1.35.0-5
 ca-bundle - 20211016-1
 cgi-io - 2022-08-10-901b0f04-21
 dawn - 2022-11-02-da8d870d-1
-dnsmasq-full - 2.87-6
+dnsmasq-full - 2.88-1
 dropbear - 2022.82-2
 ethtool - 6.0-1
 firewall4 - 2022-11-29-700a925f-2
@@ -205,7 +205,7 @@ nss-firmware-ipq8074 - 2022-05-16-20c9a9b7-1
 odhcp6c - 2022-08-05-7d21e8d8-19
 odhcpd-ipv6only - 2022-10-31-a92c0a73-1
 openwrt-keyring - 2022-03-25-62471e69-2
-opkg - 2022-02-24-d038e5b6-1
+opkg - 2022-02-24-d038e5b6-2
 ppp - 2.4.9.git-2021-01-04-4
 ppp-mod-pppoe - 2.4.9.git-2021-01-04-4
 procd - 2022-11-10-039b88f7-2
@@ -236,8 +236,8 @@ ucode-mod-lua - 1
 ucode-mod-math - 2022-12-02-46d93c9c-1
 ucode-mod-ubus - 2022-12-02-46d93c9c-1
 ucode-mod-uci - 2022-12-02-46d93c9c-1
-uhttpd - 2022-08-12-e3395cd9-3
-uhttpd-mod-ubus - 2022-08-12-e3395cd9-3
+uhttpd - 2022-10-31-23977554-1
+uhttpd-mod-ubus - 2022-10-31-23977554-1
 umdns - 2021-05-13-b777a0b5-5
 urandom-seed - 3
 urngd - 2020-01-21-c7f7b6b6-1
