@@ -1,6 +1,6 @@
 ath11k-firmware-ipq8074 - 2022-12-14-ab1229f9-1
 attendedsysupgrade-common - 8
-base-files - 1511-r21680-928dcebeba
+base-files - 1513-r21731-71addb3923
 busybox - 1.35.0-5
 ca-bundle - 20211016-1
 cgi-io - 2022-08-10-901b0f04-21
@@ -29,7 +29,7 @@ iwinfo - 2022-12-15-8d158096-1
 jansson4 - 2.14-3
 jshn - 2022-09-27-ea560134-1
 jsonfilter - 2018-02-04-c7e938d6-1
-kernel - 5.15.86-1-c202b1a771edfd405c34828a8f399bad
+kernel - 5.15.86-1-ffb3ee658a7e65160ac505475ba4add3
 kmod-ath - 5.15.86+6.1-rc8-3
 kmod-ath11k - 5.15.86+6.1-rc8-3
 kmod-ath11k-ahb - 5.15.86+6.1-rc8-3
@@ -141,7 +141,7 @@ liblucihttp-lua - 2022-07-08-6e68a106-1
 liblucihttp-ucode - 2022-07-08-6e68a106-1
 liblucihttp0 - 2022-07-08-6e68a106-1
 libmnl0 - 1.0.5-1
-libncurses6 - 6.3-2
+libncurses6 - 6.4-1
 libnftnl11 - 1.2.4-1
 libnl-tiny2022-11-01 - 2022-11-01-db3b2cdb-1
 libopenssl1.1 - 1.1.1s-1
@@ -155,7 +155,7 @@ libuclient20201210 - 2021-05-14-6a6011df-1
 libucode20220812 - 2022-12-02-46d93c9c-1
 libustream-wolfssl20201210 - 2022-12-08-9217ab46-2
 libuv1 - 1.44.1-1
-libwebsockets-full - 4.3.2-1
+libwebsockets-full - 4.3.2-2
 libwolfssl-benchmark - 5.5.4-stable-1
 libwolfsslcpu-crypto5.5.4.37994846 - 5.5.4-stable-1
 libxtables12 - 1.8.8-1
@@ -178,7 +178,7 @@ luci-lib-nixio - git-22.222.71555-88b9088
 luci-lua-runtime - git-22.325.41248-fa17c15
 luci-mod-admin-full - git-19.253.48496-3f93650
 luci-mod-dashboard - git-22.210.50464-e96c1f3
-luci-mod-network - git-22.363.37129-25a502b
+luci-mod-network - git-23.005.74128-8414f91
 luci-mod-status - git-22.364.46313-a18b1a6
 luci-mod-system - git-22.297.83017-f478fe6
 luci-proto-ipip - git-22.019.83340-37253b5
@@ -188,7 +188,7 @@ luci-theme-bootstrap - git-22.297.83017-2e3282e
 luci-theme-openwrt-2020 - git-22.299.74636-694b808
 mtd - 26
 netifd - 2022-12-30-81c1fbcb-1
-nftables-json - 1.0.5-2
+nftables-json - 1.0.6-1
 nss-eip-firmware - 2.5.7-1
 nss-firmware-ipq8074 - 2022-05-16-20c9a9b7-1
 odhcp6c - 2022-08-05-7d21e8d8-19
@@ -209,7 +209,7 @@ rpcd-mod-luci - 20210614
 rpcd-mod-rpcsys - 2022-12-15-7de4820c-1
 rpcd-mod-rrdns - 20170710
 rpcd-mod-ucode - 2022-12-15-7de4820c-1
-terminfo - 6.3-2
+terminfo - 6.4-1
 ttyd - 1.6.3-3
 ubi-utils - 2.1.5-1
 uboot-envtools - 2022.10-24
