@@ -1,7 +1,7 @@
 ath11k-firmware-ipq8074 - 2022-12-14-ab1229f9-1
 attendedsysupgrade-common - 8
-base-files - 1513-r21731-71addb3923
-busybox - 1.35.0-5
+base-files - 1513-r21750-ef42fc4609
+busybox - 1.36.0-1
 ca-bundle - 20211016-1
 cgi-io - 2022-08-10-901b0f04-21
 dawn - 2022-11-02-da8d870d-1
@@ -25,7 +25,7 @@ iptables-mod-physdev - 1.8.8-1
 iptables-mod-u32 - 1.8.8-1
 iptables-nft - 1.8.8-1
 iw - 5.19-1
-iwinfo - 2022-12-15-8d158096-1
+iwinfo - 2023-01-07-c7b420a2-1
 jansson4 - 2.14-3
 jshn - 2022-09-27-ea560134-1
 jsonfilter - 2018-02-04-c7e938d6-1
@@ -131,9 +131,9 @@ libiperf3 - 3.12-1
 libiptext-nft0 - 1.8.8-1
 libiptext0 - 1.8.8-1
 libiptext6-0 - 1.8.8-1
-libiwinfo-data - 2022-12-15-8d158096-1
-libiwinfo-lua - 2022-12-15-8d158096-1
-libiwinfo20210430 - 2022-12-15-8d158096-1
+libiwinfo-data - 2023-01-07-c7b420a2-1
+libiwinfo-lua - 2023-01-07-c7b420a2-1
+libiwinfo20210430 - 2023-01-07-c7b420a2-1
 libjson-c5 - 0.16-2
 libjson-script20220927 - 2022-09-27-ea560134-1
 liblua5.1.5 - 5.1.5-10
