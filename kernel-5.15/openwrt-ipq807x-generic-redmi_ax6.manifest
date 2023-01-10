@@ -1,6 +1,6 @@
 ath11k-firmware-ipq8074 - 2022-12-14-ab1229f9-1
 attendedsysupgrade-common - 8
-base-files - 1513-r21750-ef42fc4609
+base-files - 1513-r21762-a38982eda6
 busybox - 1.36.0-1
 ca-bundle - 20211016-1
 cgi-io - 2022-08-10-901b0f04-21
@@ -25,7 +25,7 @@ iptables-mod-physdev - 1.8.8-1
 iptables-mod-u32 - 1.8.8-1
 iptables-nft - 1.8.8-1
 iw - 5.19-1
-iwinfo - 2023-01-07-c7b420a2-1
+iwinfo - 2023-01-06-c7b420a2-1
 jansson4 - 2.14-3
 jshn - 2022-09-27-ea560134-1
 jsonfilter - 2018-02-04-c7e938d6-1
@@ -122,7 +122,7 @@ libbpf20220308 - 2022-03-08-04c465fd-1
 libc - 1.2.3-4
 libcap - 2.66-1
 libelf1 - 0.188-1
-libgcc1 - 11.3.0-4
+libgcc1 - 12.2.0-4
 libgcrypt - 1.10.1-1
 libgpg-error - 1.46-3
 libip4tc2 - 1.8.8-1
@@ -131,9 +131,9 @@ libiperf3 - 3.12-1
 libiptext-nft0 - 1.8.8-1
 libiptext0 - 1.8.8-1
 libiptext6-0 - 1.8.8-1
-libiwinfo-data - 2023-01-07-c7b420a2-1
-libiwinfo-lua - 2023-01-07-c7b420a2-1
-libiwinfo20210430 - 2023-01-07-c7b420a2-1
+libiwinfo-data - 2023-01-06-c7b420a2-1
+libiwinfo-lua - 2023-01-06-c7b420a2-1
+libiwinfo20210430 - 2023-01-06-c7b420a2-1
 libjson-c5 - 0.16-2
 libjson-script20220927 - 2022-09-27-ea560134-1
 liblua5.1.5 - 5.1.5-10
@@ -184,8 +184,8 @@ luci-mod-system - git-22.297.83017-f478fe6
 luci-proto-ipip - git-22.019.83340-37253b5
 luci-proto-ipv6 - git-21.148.48881-79947af
 luci-proto-ppp - git-21.158.38888-88b9d84
-luci-theme-bootstrap - git-22.297.83017-2e3282e
-luci-theme-openwrt-2020 - git-22.299.74636-694b808
+luci-theme-bootstrap - git-23.009.43662-21b4065
+luci-theme-openwrt-2020 - git-23.009.43662-21b4065
 mtd - 26
 netifd - 2022-12-30-81c1fbcb-1
 nftables-json - 1.0.6-1
