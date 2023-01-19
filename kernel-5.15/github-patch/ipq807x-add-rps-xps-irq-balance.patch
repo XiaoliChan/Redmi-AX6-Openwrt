@@ -1,19 +1,9 @@
-From 5b39e9702c59622e7e2050afee10fb365e622a6c Mon Sep 17 00:00:00 2001
-From: coolsnowwolf <coolsnowwolf@gmail.com>
-Date: Fri, 16 Jul 2021 14:36:44 +0800
-Subject: [PATCH] ipq807x: add rps/xps irq balance
-
-Signed-off-by: Tianling Shen <cnsztl@immortalwrt.org>
----
- target/linux/ipq807x/base-files/etc/init.d/bootcount | 5 +++++
- 1 file changed, 5 insertions(+)
-
 diff --git a/target/linux/ipq807x/base-files/etc/init.d/bootcount b/target/linux/ipq807x/base-files/etc/init.d/bootcount
-index 6d5f3abf91..cbc5840b2e 100755
+index 6917446a9b..a38432c387 100755
 --- a/target/linux/ipq807x/base-files/etc/init.d/bootcount
 +++ b/target/linux/ipq807x/base-files/etc/init.d/bootcount
-@@ -18,4 +18,9 @@ boot() {
- 		fw_setenv flag_boot_success 1
+@@ -10,4 +10,9 @@ boot() {
+ 		fw_setenv changed
  	;;
  	esac
 +

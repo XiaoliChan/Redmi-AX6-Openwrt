@@ -1,0 +1,141 @@
+From 3674bb7af1592da7b535df6d1e7fac6be3967a27 Mon Sep 17 00:00:00 2001
+From: DENG Qingfang <dqfext@gmail.com>
+Date: Sun, 13 Feb 2022 09:38:22 +0800
+Subject: [PATCH] kernel/net: add netfilter fullcone NAT package
+
+---
+ package/network/fullconenat/Makefile          | 78 +++++++++++++++++++
+ package/network/fullconenat/files/Makefile    | 11 +++
+ .../001-fix-init-Repeat-definition.patch      | 20 +++++
+ 3 files changed, 109 insertions(+)
+ create mode 100644 package/network/fullconenat/Makefile
+ create mode 100644 package/network/fullconenat/files/Makefile
+ create mode 100644 package/network/fullconenat/patches/001-fix-init-Repeat-definition.patch
+
+diff --git a/package/network/fullconenat/Makefile b/package/network/fullconenat/Makefile
+new file mode 100644
+index 0000000000000..6d0c0cd9988dd
+--- /dev/null
++++ b/package/network/fullconenat/Makefile
+@@ -0,0 +1,78 @@
++#
++# Copyright (C) 2018 Chion Tang <tech@chionlab.moe>
++#
++# This is free software, licensed under the GNU General Public License v2.
++# See /LICENSE for more information.
++#
++
++include $(TOPDIR)/rules.mk
++include $(INCLUDE_DIR)/kernel.mk
++
++PKG_NAME:=fullconenat
++PKG_RELEASE:=1
++
++PKG_SOURCE_DATE:=2022-02-13
++PKG_SOURCE_PROTO:=git
++PKG_SOURCE_URL:=https://github.com/llccd/netfilter-full-cone-nat.git
++PKG_SOURCE_VERSION:=108a36cbdca17e68c9e6e7fd5e26156a88f738e8
++
++PKG_LICENSE:=GPL-2.0
++PKG_LICENSE_FILES:=LICENSE
++
++include $(INCLUDE_DIR)/package.mk
++
++define Package/iptables-mod-fullconenat
++  SUBMENU:=Firewall
++  SECTION:=net
++  CATEGORY:=Network
++  TITLE:=FULLCONENAT iptables extension
++  DEPENDS:=iptables +kmod-ipt-fullconenat
++  MAINTAINER:=Chion Tang <tech@chionlab.moe>
++endef
++
++define Package/iptables-mod-fullconenat/install
++	$(INSTALL_DIR) $(1)/usr/lib/iptables
++	$(INSTALL_BIN) $(PKG_BUILD_DIR)/libipt_FULLCONENAT.so $(1)/usr/lib/iptables
++endef
++
++define Package/ip6tables-mod-fullconenat
++  SUBMENU:=Firewall
++  SECTION:=net
++  CATEGORY:=Network
++  TITLE:=FULLCONENAT ip6tables extension
++  DEPENDS:=ip6tables +kmod-nf-nat6 +kmod-ipt-fullconenat
++  MAINTAINER:=Chion Tang <tech@chionlab.moe>
++endef
++
++define Package/ip6tables-mod-fullconenat/install
++	$(INSTALL_DIR) $(1)/usr/lib/iptables
++	$(INSTALL_BIN) $(PKG_BUILD_DIR)/libip6t_FULLCONENAT.so $(1)/usr/lib/iptables
++endef
++
++define KernelPackage/ipt-fullconenat
++  SUBMENU:=Netfilter Extensions
++  TITLE:=FULLCONENAT netfilter module
++  DEPENDS:=+kmod-nf-ipt +kmod-nf-nat
++  MAINTAINER:=Chion Tang <tech@chionlab.moe>
++  KCONFIG:=CONFIG_NF_CONNTRACK_EVENTS=y CONFIG_NF_CONNTRACK_CHAIN_EVENTS=y
++  FILES:=$(PKG_BUILD_DIR)/xt_FULLCONENAT.ko
++endef
++
++include $(INCLUDE_DIR)/kernel-defaults.mk
++
++define Build/Prepare
++	$(call Build/Prepare/Default)
++	$(CP) ./files/Makefile $(PKG_BUILD_DIR)/
++endef
++
++define Build/Compile
++	$(KERNEL_MAKE) M="$(PKG_BUILD_DIR)" \
++	EXTRA_CFLAGS="$(EXTRA_CFLAGS)" \
++	$(PKG_EXTRA_KCONFIG) \
++	modules
++	$(call Build/Compile/Default)
++endef
++
++$(eval $(call BuildPackage,iptables-mod-fullconenat))
++$(eval $(call BuildPackage,ip6tables-mod-fullconenat))
++$(eval $(call KernelPackage,ipt-fullconenat))
+diff --git a/package/network/fullconenat/files/Makefile b/package/network/fullconenat/files/Makefile
+new file mode 100644
+index 0000000000000..467ad17cd2fb4
+--- /dev/null
++++ b/package/network/fullconenat/files/Makefile
+@@ -0,0 +1,11 @@
++all: libipt_FULLCONENAT.so libip6t_FULLCONENAT.so
++libipt_FULLCONENAT.so: libipt_FULLCONENAT.o
++	$(CC) -shared -lxtables -o $@ $^;
++libipt_FULLCONENAT.o: libipt_FULLCONENAT.c
++	$(CC) ${CFLAGS} -fPIC -D_INIT=$*_init -c -o $@ $<;
++libip6t_FULLCONENAT.so: libip6t_FULLCONENAT.o
++	$(CC) -shared -lxtables -o $@ $^;
++libip6t_FULLCONENAT.o: libip6t_FULLCONENAT.c
++	$(CC) ${CFLAGS} -fPIC -D_INIT=$*_init -c -o $@ $<;
++
++obj-m += xt_FULLCONENAT.o
+diff --git a/package/network/fullconenat/patches/001-fix-init-Repeat-definition.patch b/package/network/fullconenat/patches/001-fix-init-Repeat-definition.patch
+new file mode 100644
+index 0000000000000..67c9332c842e1
+--- /dev/null
++++ b/package/network/fullconenat/patches/001-fix-init-Repeat-definition.patch
+@@ -0,0 +1,20 @@
++--- a/libip6t_FULLCONENAT.c
+++++ b/libip6t_FULLCONENAT.c
++@@ -214,6 +214,7 @@ static struct xtables_target fullconenat_tg_reg = {
++ 	.x6_options	= FULLCONENAT_opts,
++ };
++ 
+++#define _init __attribute__((constructor)) _INIT
++ void _init(void)
++ {
++ 	xtables_register_target(&fullconenat_tg_reg);
++--- a/libipt_FULLCONENAT.c
+++++ b/libipt_FULLCONENAT.c
++@@ -235,6 +235,7 @@ static struct xtables_target fullconenat_tg_reg = {
++ 	.x6_options	= FULLCONENAT_opts,
++ };
++ 
+++#define _init __attribute__((constructor)) _INIT
++ void _init(void)
++ {
++ 	xtables_register_target(&fullconenat_tg_reg);
